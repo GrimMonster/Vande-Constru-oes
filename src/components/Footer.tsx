@@ -38,11 +38,9 @@ export const Footer: React.FC = () => {
               Navegação
             </span>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><a href="#hero" className="hover:text-[#FF6B00] transition-colors">Início</a></li>
-              <li><a href="#servicos" className="hover:text-[#FF6B00] transition-colors">Serviços</a></li>
+              <li><a href="#hero" className="hover:text-[#FF6B00] transition-colors">Sobre a Vande</a></li>
               <li><a href="#portfolio" className="hover:text-[#FF6B00] transition-colors">Obras Realizadas</a></li>
-              <li><a href="#filosofia" className="hover:text-[#FF6B00] transition-colors">Método Executivo</a></li>
-              <li><a href="#contato" className="hover:text-[#FF6B00] transition-colors">Fale Conosco</a></li>
+              <li><a href="#contato" className="hover:text-[#FF6B00] transition-colors">Contato &amp; Endereço</a></li>
             </ul>
           </div>
 

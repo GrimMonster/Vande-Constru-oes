@@ -18,11 +18,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultationModal }) => {
   }, []);
 
   const navLinks = [
-    { name: 'A Vande', href: '#hero' },
-    { name: 'Serviços', href: '#servicos' },
+    { name: 'Sobre a Vande', href: '#hero' },
     { name: 'Obras', href: '#portfolio' },
-    { name: 'Diferenciais', href: '#filosofia' },
-    { name: 'Contato', href: '#contato' },
+    { name: 'Contato & Endereço', href: '#contato' },
   ];
 
   return (
