@@ -5,7 +5,6 @@ import { Hero } from './components/Hero';
 import { QuickContactBar } from './components/QuickContactBar';
 import { ServicesBento } from './components/ServicesBento';
 import { PortfolioGallery } from './components/PortfolioGallery';
-import { InvestmentEstimator } from './components/InvestmentEstimator';
 import { PhilosophyAndProcess } from './components/PhilosophyAndProcess';
 import { SocialProofAndStats } from './components/SocialProofAndStats';
 import { ContactSection } from './components/ContactSection';
@@ -53,9 +52,6 @@ export default function App() {
 
         {/* Portfolio Section */}
         <PortfolioGallery onOpenConsultationModal={(title) => handleOpenConsultationModal(title ? `Interesse no projeto: ${title}` : undefined)} />
-
-        {/* Interactive Estimator & AI Brief Generator */}
-        <InvestmentEstimator onOpenConsultationModal={(briefContext) => handleOpenConsultationModal(briefContext)} />
 
         {/* Method & Process */}
         <PhilosophyAndProcess />

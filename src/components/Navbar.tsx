@@ -21,7 +21,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultationModal }) => {
     { name: 'A Vande', href: '#hero' },
     { name: 'Serviços', href: '#servicos' },
     { name: 'Obras', href: '#portfolio' },
-    { name: 'Simulador IA', href: '#calculadora' },
     { name: 'Diferenciais', href: '#filosofia' },
     { name: 'Contato', href: '#contato' },
   ];
