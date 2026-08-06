@@ -88,13 +88,6 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsul
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#101B3B] via-transparent to-black/30 opacity-80 group-hover:opacity-60 transition-opacity" />
 
-                {/* Badge area */}
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1 bg-[#0A1128]/90 backdrop-blur-md border border-[#FF6B00]/40 text-[10px] uppercase font-bold tracking-widest text-[#FF6B00]">
-                    {project.area}
-                  </span>
-                </div>
-
                 <div className="absolute top-4 right-4 w-9 h-9 rounded-none bg-[#0A1128]/90 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
                   <Maximize2 className="w-4 h-4 text-[#FF6B00]" />
                 </div>

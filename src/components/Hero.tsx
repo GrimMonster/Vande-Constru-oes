@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Compass, ShieldCheck, Award } from 'lucide-react';
-import { STUDIO_STATS } from '../data/mockData';
+import { ArrowUpRight } from 'lucide-react';
 
 interface HeroProps {
   onOpenConsultationModal: () => void;
@@ -70,26 +69,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultationModal }) => {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-300 max-w-md font-normal leading-relaxed border-l-2 border-[#FF6B00] pl-4">
-              "Construtora com vasta experiência, juntando o custo e qualidade ideal para o cliente." — Engenharia e execução em Rio Negro, PR e região.
+              "Construtora com vasta experiência, juntando o custo e qualidade ideal para o cliente."
+              <span className="block text-[11px] text-slate-400 font-mono tracking-wider mt-2 uppercase">
+                • Mais de 18 anos de tradição em Rio Negro, PR e região
+              </span>
             </p>
           </div>
-        </div>
-
-        {/* Studio Stats Grid Footer */}
-        <div className="pt-8 border-t border-[#FF6B00]/20 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12">
-          {STUDIO_STATS.map((stat, idx) => (
-            <div key={idx} className="flex flex-col border-l border-[#FF6B00]/30 pl-4">
-              <span className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-black text-[#FFFFFF] tracking-tight flex items-baseline gap-1">
-                {stat.value}
-                <span className="text-xs text-[#FF6B00] font-sans font-semibold ml-1">
-                  {stat.suffix}
-                </span>
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 mt-1 font-medium">
-                {stat.label}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
