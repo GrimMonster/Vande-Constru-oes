@@ -1,7 +1,13 @@
 {
   "short_name": "Vande",
   "name": "Vande Construções | Engenharia & Construção Civil",
-  "icons": [],
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/d/1P01Hl04v2AgNQRmir12SKhEgCVoJYTKp",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "start_url": "/",
   "background_color": "#0A1128",
   "theme_color": "#FF6B00",
