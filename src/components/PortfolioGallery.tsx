@@ -1,36 +1,32 @@
 import React, { useState } from 'react';
-import { PROJECTS } from '../data/mockData';
-import { Project } from '../types';
-import { Maximize2, MapPin, Calendar, Layers, ArrowUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { WORKS_MEDIA } from '../data/mockData';
+import { WorkMedia } from '../types';
+import { Maximize2, ArrowUpRight, X, ChevronLeft, ChevronRight, Play, ExternalLink, VolumeX, Volume2 } from 'lucide-react';
 
 interface PortfolioGalleryProps {
   onOpenConsultationModal: (projectTitle?: string) => void;
 }
 
 export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsultationModal }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('todos');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+  const [selectedMedia, setSelectedMedia] = useState<WorkMedia | null>(null);
+  const [selectedMediaIndex, setSelectedMediaIndex] = useState<number>(0);
+  const [isAudioMuted, setIsAudioMuted] = useState<boolean>(true);
 
-  const filteredProjects = activeCategory === 'todos'
-    ? PROJECTS
-    : PROJECTS.filter(p => p.category === activeCategory);
-
-  const categories = [
-    { id: 'todos', label: 'Todas as Obras' },
-    { id: 'residencial', label: 'Residências de Alto Padrão' },
-    { id: 'edificios', label: 'Edifícios & Empreendimentos' },
-    { id: 'interiores', label: 'Interiores & Retrofit' },
-    { id: 'corporativo', label: 'Obras Corporativas & Industriais' }
-  ];
-
-  const handleOpenLightbox = (project: Project) => {
-    setSelectedProject(project);
-    setActiveImageIndex(0);
+  const handleOpenMediaLightbox = (media: WorkMedia, index: number) => {
+    setSelectedMedia(media);
+    setSelectedMediaIndex(index);
   };
 
-  const getProjectImages = (project: Project) => {
-    return [project.imageUrl, ...(project.secondaryImages || [])];
+  const handlePrevMedia = () => {
+    const newIdx = selectedMediaIndex === 0 ? WORKS_MEDIA.length - 1 : selectedMediaIndex - 1;
+    setSelectedMediaIndex(newIdx);
+    setSelectedMedia(WORKS_MEDIA[newIdx]);
+  };
+
+  const handleNextMedia = () => {
+    const newIdx = selectedMediaIndex === WORKS_MEDIA.length - 1 ? 0 : selectedMediaIndex + 1;
+    setSelectedMediaIndex(newIdx);
+    setSelectedMedia(WORKS_MEDIA[newIdx]);
   };
 
   return (
@@ -44,188 +40,145 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsul
               <span>Acervo de Obras Vande</span>
             </div>
             <h2 className="font-montserrat text-3xl sm:text-5xl font-black tracking-tight uppercase text-[#FFFFFF]">
-              PORTFÓLIO DE <span className="text-orange-gradient">OBRAS ENTREGUES</span>
+              GALERIA DE <span className="text-orange-gradient">FOTOS E VÍDEOS</span>
             </h2>
           </div>
           <p className="text-slate-300 text-sm max-w-md font-normal leading-relaxed">
-            Conheça algumas das obras executadas com a marca de qualidade Vande Construções. Rigor técnico, beleza arquitetônica e pontualidade exemplar.
+            Confira os registros reais das obras e construções executadas com a marca de qualidade Vande Construções.
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 text-xs uppercase tracking-widest font-bold transition-all duration-300 whitespace-nowrap ${
-                activeCategory === cat.id
-                  ? 'bg-[#FF6B00] text-[#FFFFFF] shadow-[0_0_20px_rgba(255,107,0,0.35)]'
-                  : 'bg-[#101B3B] text-slate-300 hover:text-white border border-white/10'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Asymmetric Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => (
+        {/* Unified Gallery of Media Items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {WORKS_MEDIA.map((item, idx) => (
             <div
-              key={project.id}
-              onClick={() => handleOpenLightbox(project)}
-              className={`group relative bg-[#101B3B] border border-[#FF6B00]/25 overflow-hidden cursor-pointer transition-all duration-500 hover:border-[#FF6B00] flex flex-col ${
-                idx === 0 ? 'lg:col-span-2 lg:row-span-1' : ''
-              }`}
+              key={item.id}
+              onClick={() => handleOpenMediaLightbox(item, idx)}
+              className="group relative bg-[#101B3B] border border-white/10 hover:border-[#FF6B00] cursor-pointer overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-md"
             >
-              {/* Image with Zoom */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-black">
+              {/* Thumbnail / Google Drive Preview Frame */}
+              <div className="relative aspect-[4/3] bg-black overflow-hidden flex items-center justify-center">
                 <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  src={item.thumbnailUrl}
+                  alt="Foto / Vídeo de Obra Vande Construções"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#101B3B] via-transparent to-black/30 opacity-80 group-hover:opacity-60 transition-opacity" />
-
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-none bg-[#0A1128]/90 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                  <Maximize2 className="w-4 h-4 text-[#FF6B00]" />
+                
+                {/* Play/Expand Hover Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <Play className="w-5 h-5 fill-white ml-0.5" />
+                  </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col justify-between flex-grow">
-                <div>
-                  <div className="flex items-center gap-4 text-[11px] text-slate-300 mb-2 font-medium">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-[#FF6B00]" />
-                      {project.location}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3 text-[#FF6B00]" />
-                      {project.year}
-                    </span>
-                  </div>
-
-                  <h3 className="font-montserrat text-xl sm:text-2xl font-bold uppercase text-[#FFFFFF] mb-2 group-hover:text-[#FF6B00] transition-colors">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-300 font-normal line-clamp-2 mb-4">
-                    {project.subtitle}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-bold text-[#FF6B00] uppercase tracking-wider">
-                  <span>Ver Detalhes da Obra</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+              {/* Minimal Clean Subtitle */}
+              <div className="p-3 bg-[#101B3B] border-t border-white/5 flex items-center justify-between">
+                <span className="text-[11px] text-slate-300 font-mono truncate">
+                  {item.location}
+                </span>
+                <Maximize2 className="w-3.5 h-3.5 text-[#FF6B00] opacity-80 group-hover:opacity-100 flex-shrink-0 ml-2" />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto">
-          <div className="bg-[#101B3B] border border-[#FF6B00]/50 max-w-5xl w-full my-8 relative shadow-[0_0_80px_rgba(255,107,0,0.25)] overflow-hidden">
+      {/* Google Drive Media Lightbox Modal */}
+      {selectedMedia && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto">
+          <div className="bg-[#101B3B] border border-[#FF6B00]/60 max-w-4xl w-full my-8 relative shadow-[0_0_90px_rgba(255,107,0,0.3)] overflow-hidden">
             {/* Close */}
             <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-20 p-3 bg-black/70 rounded-none border border-white/20 text-white hover:text-[#FF6B00] transition-colors"
+              onClick={() => setSelectedMedia(null)}
+              className="absolute top-4 right-4 z-30 p-3 bg-black/80 border border-white/20 text-white hover:text-[#FF6B00] transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
 
-            {/* Gallery Image Slider */}
-            <div className="relative aspect-[16/9] bg-black overflow-hidden">
-              <img
-                src={getProjectImages(selectedProject)[activeImageIndex]}
-                alt={selectedProject.title}
-                className="w-full h-full object-cover transition-all duration-500"
+            {/* Media Player Frame */}
+            <div className="relative aspect-[16/9] bg-black overflow-hidden flex items-center justify-center">
+              <iframe
+                src={selectedMedia.embedUrl}
+                title="Visualização de Mídia - Vande Construções"
+                className="w-full h-full border-0"
+                allow="autoplay"
               />
 
-              {getProjectImages(selectedProject).length > 1 && (
-                <>
-                  <button
-                    onClick={() => setActiveImageIndex((prev) => (prev === 0 ? getProjectImages(selectedProject).length - 1 : prev - 1))}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/60 text-white hover:bg-[#FF6B00] transition-all"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={() => setActiveImageIndex((prev) => (prev === getProjectImages(selectedProject).length - 1 ? 0 : prev + 1))}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/60 text-white hover:bg-[#FF6B00] transition-all"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </>
-              )}
+              {/* Prev / Next controls */}
+              <button
+                onClick={handlePrevMedia}
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/70 text-white hover:bg-[#FF6B00] transition-all border border-white/10"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={handleNextMedia}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/70 text-white hover:bg-[#FF6B00] transition-all border border-white/10"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
 
-              <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-xs text-slate-200 font-mono">
-                {activeImageIndex + 1} / {getProjectImages(selectedProject).length}
+              <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                <div className="bg-black/80 backdrop-blur-md px-3 py-1 text-xs text-slate-200 font-mono border border-white/10">
+                  {selectedMediaIndex + 1} de {WORKS_MEDIA.length}
+                </div>
+                <button
+                  onClick={() => setIsAudioMuted(!isAudioMuted)}
+                  className={`px-3 py-1 text-xs font-mono font-bold flex items-center gap-1.5 border backdrop-blur-md transition-colors ${
+                    isAudioMuted
+                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                      : 'bg-[#FF6B00]/20 text-[#FF6B00] border-[#FF6B00]/40'
+                  }`}
+                >
+                  {isAudioMuted ? (
+                    <>
+                      <VolumeX className="w-3.5 h-3.5 text-amber-400" />
+                      <span>ÁUDIO SILENCIOSO</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-3.5 h-3.5 text-[#FF6B00]" />
+                      <span>ÁUDIO ATIVADO</span>
+                    </>
+                  )}
+                </button>
               </div>
             </div>
 
-            {/* Modal Content */}
-            <div className="p-8 sm:p-10">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-                <div>
-                  <span className="text-xs uppercase tracking-widest text-[#FF6B00] font-bold">
-                    {selectedProject.category.toUpperCase()} • {selectedProject.area}
-                  </span>
-                  <h3 className="font-montserrat text-3xl font-black uppercase text-[#FFFFFF] mt-1">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-sm text-slate-300 font-normal mt-1">
-                    {selectedProject.subtitle}
-                  </p>
-                </div>
+            {/* Details Footer */}
+            <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF6B00]">
+                  VANDE CONSTRUÇÕES • {selectedMedia.location}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={selectedMedia.originalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2.5 bg-[#0A1128] border border-white/20 hover:border-[#FF6B00] text-slate-200 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-colors"
+                >
+                  <span>Abrir no Google Drive</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#FF6B00]" />
+                </a>
 
                 <button
                   onClick={() => {
-                    const title = selectedProject.title;
-                    setSelectedProject(null);
-                    onOpenConsultationModal(title);
+                    setSelectedMedia(null);
+                    onOpenConsultationModal('Obra Vande Construções');
                   }}
-                  className="px-6 py-3 bg-[#FF6B00] text-[#FFFFFF] font-montserrat font-bold text-xs uppercase tracking-widest hover:bg-[#E05D00] transition-colors flex items-center gap-2 shadow-md"
+                  className="px-5 py-2.5 bg-[#FF6B00] hover:bg-[#E05D00] text-white text-xs font-montserrat font-bold uppercase tracking-widest flex items-center gap-2 transition-colors shadow-md"
                 >
-                  <span>Solicitar Obra Semelhante</span>
+                  <span>Solicitar Orçamento</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
-              </div>
-
-              {/* Description & Specs */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-2 space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                    Resumo do Projeto &amp; Execução
-                  </h4>
-                  <p className="text-sm text-slate-200 leading-relaxed font-normal">
-                    {selectedProject.description}
-                  </p>
-                </div>
-
-                <div className="space-y-4 bg-[#0A1128] p-6 border border-[#FF6B00]/30">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#FF6B00]">
-                    Especificações Técnicas
-                  </h4>
-                  <div className="space-y-3 text-xs text-slate-200">
-                    <div>
-                      <span className="text-slate-400 block text-[10px] uppercase font-medium">Estrutura</span>
-                      <span className="font-semibold">{selectedProject.specs.structure}</span>
-                    </div>
-                    <div>
-                      <span className="text-slate-400 block text-[10px] uppercase font-medium">Prazo Vande</span>
-                      <span className="font-semibold">{selectedProject.specs.timeline}</span>
-                    </div>
-                    <div>
-                      <span className="text-slate-400 block text-[10px] uppercase font-medium">Diferencial</span>
-                      <span className="font-bold text-[#FF6B00]">{selectedProject.specs.highlight}</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -234,3 +187,4 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsul
     </section>
   );
 };
+

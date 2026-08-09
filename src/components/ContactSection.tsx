@@ -22,8 +22,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialContext }
         </h2>
 
         <p className="text-slate-300 text-sm max-w-lg mx-auto mb-10 font-normal leading-relaxed">
-          Entre em contato diretamente pelo WhatsApp para tirar dúvidas, solicitar um orçamento ou agendar uma reunião técnica.
+          Entre em contato diretamente com Vanderlei Kurz para tirar dúvidas, solicitar orçamentos ou agendar uma reunião técnica para sua obra.
         </p>
+
+        {/* Contact Info Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10 text-left">
+          <div className="p-4 bg-[#101B3B] border border-white/10">
+            <span className="text-[10px] uppercase font-bold text-[#FF6B00] block tracking-wider">Contato Responsável</span>
+            <span className="text-sm font-bold text-white block mt-1">Vanderlei Kurz</span>
+            <span className="text-xs text-slate-400 block font-mono mt-0.5">Cel: (47) 99726-9774</span>
+          </div>
+          <div className="p-4 bg-[#101B3B] border border-white/10">
+            <span className="text-[10px] uppercase font-bold text-[#FF6B00] block tracking-wider">Telefone Fixo &amp; E-mail</span>
+            <span className="text-xs font-bold text-white block mt-1 font-mono">Fixo: (47) 3642-5620</span>
+            <span className="text-[11px] text-slate-300 block font-mono truncate mt-0.5">vandeconstrucoes2016@gmail.com</span>
+          </div>
+          <div className="p-4 bg-[#101B3B] border border-white/10">
+            <span className="text-[10px] uppercase font-bold text-[#FF6B00] block tracking-wider">Endereço Principal</span>
+            <span className="text-xs font-bold text-white block mt-1">Rua Cristiano Buch, 545</span>
+            <span className="text-xs text-slate-400 block font-mono mt-0.5">Bairro Bom Jesus • CEP 83880-000 • Rio Negro - PR</span>
+          </div>
+        </div>
 
         {/* Single Main WhatsApp Direct Button */}
         <div className="flex justify-center mb-8">
@@ -34,7 +53,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialContext }
             className="group inline-flex items-center gap-4 px-8 py-5 bg-[#FF6B00] hover:bg-[#E05D00] text-white font-montserrat text-sm uppercase tracking-[0.2em] font-extrabold transition-all duration-300 shadow-[0_0_30px_rgba(255,107,0,0.35)]"
           >
             <MessageSquare className="w-5 h-5 text-white" />
-            <span>Falar no WhatsApp da Vande</span>
+            <span>Falar no WhatsApp com Vanderlei Kurz</span>
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </a>
         </div>

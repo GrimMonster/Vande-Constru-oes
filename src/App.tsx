@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { QuickContactBar } from './components/QuickContactBar';
+import { AboutCompany } from './components/AboutCompany';
 import { PortfolioGallery } from './components/PortfolioGallery';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -25,11 +26,14 @@ export default function App() {
       <Navbar onOpenConsultationModal={() => handleOpenConsultationModal()} />
 
       <main>
-        {/* Hero & Sobre a Empresa */}
+        {/* Hero */}
         <Hero onOpenConsultationModal={() => handleOpenConsultationModal()} />
 
-        {/* Quick Contact & Location Bar */}
+        {/* Quick Contact Bar */}
         <QuickContactBar />
+
+        {/* Institucional / Sobre a Empresa com Missão, Visão, Objetivos e Obras */}
+        <AboutCompany />
 
         {/* Obras & Fotos / Portfolio Section */}
         <PortfolioGallery onOpenConsultationModal={(title) => handleOpenConsultationModal(title ? `Interesse no projeto: ${title}` : undefined)} />

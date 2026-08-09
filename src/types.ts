@@ -1,3 +1,14 @@
+export interface WorkMedia {
+  id: string;
+  driveId: string;
+  title: string;
+  category: string;
+  location: string;
+  thumbnailUrl: string;
+  embedUrl: string;
+  originalUrl: string;
+}
+
 export interface Project {
   id: string;
   title: string;

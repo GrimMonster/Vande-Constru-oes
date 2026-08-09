@@ -18,17 +18,17 @@ export const Footer: React.FC = () => {
                   VANDE CONSTRUÇÕES
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-[#FF6B00] font-bold block mt-1">
-                  ENGENHARIA &amp; ALTO PADRÃO
+                  VANDERLEI KURZ • FUNDADA EM 2015
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-slate-300 font-normal max-w-sm leading-relaxed">
-              Empresa de engenharia e construção civil de alto padrão. Especialistas em obras residenciais, comerciais, reformas e gerenciamento técnico rigoroso.
+              Atuamos em obras de edificações residenciais, comerciais, industriais, contenção de encostas, redes elétricas, instalações hidráulicas/sanitárias e comércio varejista de materiais de construção.
             </p>
 
             <div className="pt-2 text-[11px] text-[#FF6B00] font-mono italic font-semibold">
-              "Construindo sonhos com solidez, precisão e compromisso absoluto."
+              "Realizar empreendimentos com excelência sob os preceitos da ética, responsabilidade e bem estar das pessoas."
             </div>
           </div>
 
@@ -80,8 +80,9 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="text-[10px] text-slate-300 space-y-1 font-mono">
-              <div>📍 R. Cristiano Buch, 545 - Passa Três, Rio Negro - PR</div>
-              <div>📞 (47) 99726-9774 • CREA-PR Registrado</div>
+              <div>📍 Rua Cristiano Buch, 545, Bairro Bom Jesus - Rio Negro - PR</div>
+              <div>📞 (47) 3642-5620 • 📱 (47) 99726-9774</div>
+              <div>✉️ vandeconstrucoes2016@gmail.com</div>
               <div>⭐ 5,0 Avaliação Máxima no Google (4 Avaliações)</div>
             </div>
           </div>

@@ -11,8 +11,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultationModal }) => {
       {/* Background Hero Image with Dark Editorial Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-35 grayscale hover:grayscale-0 transition-all duration-1000">
         <img
-          src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=2000&q=90"
-          alt="Canteiro de obras e engenharia civil de alto padrão Vande Construções"
+          src="https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1"
+          alt="Canteiro de obras e engenharia civil Vande Construções"
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-105"
         />
         {/* Gradients to blend seamless into navy background */}

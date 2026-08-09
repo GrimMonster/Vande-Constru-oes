@@ -1,107 +1,130 @@
-import { Project, ServiceItem, Testimonial } from '../types';
+import { Project, ServiceItem, Testimonial, WorkMedia } from '../types';
+
+export const COMPANY_INFO = {
+  legalName: 'VANDERLEI KURZ (VANDE CONSTRUÇÕES)',
+  tradeName: 'Vande Construções',
+  foundedDate: '08 de dezembro de 2015',
+  founder: 'Vanderlei Kurz',
+  phone: '(47) 3642-5620',
+  mobilePhone: '(47) 99726-9774',
+  whatsappUrl: 'https://wa.me/5547997269774?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Vande%20Constru%C3%A7%C3%B5es%20e%20gostaria%20de%20um%20or%C3%A7amento.',
+  email: 'vandeconstrucoes2016@gmail.com',
+  address: 'Rua Cristiano Buch, 545, Bairro Bom Jesus',
+  cep: '83880-000',
+  cityState: 'Rio Negro - PR',
+  mission: 'Realizar empreendimentos com excelência sob os preceitos da ética, e responsabilidade aliados ao bem estar das pessoas.',
+  vision: 'Ser a melhor empresa para se trabalhar na construção civil, através do incentivo aos colaboradores para que suas entregas de obras (públicas ou privadas) sejam amparadas na qualidade total e melhoria contínua.',
+  objective: 'Melhorar continuamente sua colocação no mercado da construção civil, através da expansão da sua equipe e ser uma construtora de referência em excelência.',
+  summary: 'Fundada em 08 de dezembro de 2015, a Vande Construções atende clientes públicos e privados com rigor técnico, equipe treinada e motivada em um sistema focado na qualidade total.',
+  areasOfOperation: [
+    'Edificações Residenciais, Comerciais e Industriais',
+    'Contenção de Encostas & Obras de Terraplenagem',
+    'Manutenções de Redes de Distribuição de Energia Elétrica',
+    'Instalações Hidráulicas, Sanitárias e de Gás',
+    'Comércio Varejista de Materiais de Construção em Geral',
+    'Auditoria, Gerenciamento e Manutenção de Obras'
+  ]
+};
 
 export const PROJECTS: Project[] = [
   {
-    id: 'residencia-vande-alpha',
-    title: 'Mansão Vande Alpha',
-    subtitle: '1.200m² de Engenharia de Precisão e Acabamentos Exclusivos',
+    id: 'sobrado-mafra-sc',
+    title: 'Sobrado Residencial Mafra / SC',
+    subtitle: 'Sobrado de Alto Padrão com Acabamento Impecável e Engenharia de Precisão',
     category: 'residencial',
-    area: '1.200 m²',
-    location: 'Alphaville, SP',
-    year: '2025',
-    description: 'Residência unifamiliar de altíssimo padrão executada com rigor estrutural pela Vande Construções. Estrutura em concreto aparente e pele de vidro integrando a natureza aos espaços internos.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+    area: '420 m²',
+    location: 'Mafra / SC',
+    year: '2024',
+    description: 'Execução completa de sobrado residencial em Mafra/SC pela Vande Construções. Estrutura em alvenaria estrutural reforçada, com finos acabamentos, integração de ambientes e projeto luminotécnico funcional.',
+    imageUrl: 'https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80'
+      'https://lh3.googleusercontent.com/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
+      'https://lh3.googleusercontent.com/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS'
     ],
     specs: {
-      structure: 'Concreto protendido autoportante com balanços marcantes',
-      timeline: '14 meses (Executado rigorosamente dentro do prazo Vande)',
-      highlight: 'Piscina aquecida em balanço e automação predial completa'
+      structure: 'Alvenaria de precisão, lajes treliçadas e cobertura isolada',
+      timeline: 'Prazo cumprido rigorosamente sem aditivos',
+      highlight: 'Design moderno com garagens amplas e área gourmet integrada'
     },
     featured: true
   },
   {
-    id: 'edificio-vande-tower',
-    title: 'Vande Corporate Tower',
-    subtitle: 'Engenharia Comercial de Vanguarda e Certificação Sustentável',
+    id: 'casa-alvenaria-seminario',
+    title: 'Casa de Alvenaria - Bairro Seminário',
+    subtitle: 'Residência Unifamiliar de Alto Padrão em Rio Negro / PR',
+    category: 'residencial',
+    area: '350 m²',
+    location: 'Bairro Seminário, Rio Negro / PR',
+    year: '2024',
+    description: 'Construção residencial completa realizada no Bairro Seminário em Rio Negro/PR. Gestão Turnkey da fundação até a pintura final, com padrões rigorosos de impermeabilização e instalações hidráulicas e elétricas.',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ',
+    secondaryImages: [
+      'https://lh3.googleusercontent.com/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR'
+    ],
+    specs: {
+      structure: 'Fundação profunda, vigamento baldrame impermeabilizado e alvenaria premium',
+      timeline: '8 meses de execução técnica',
+      highlight: 'Sistemas de aproveitamento de água e iluminação em LED'
+    },
+    featured: true
+  },
+  {
+    id: 'condominio-jardim-america',
+    title: 'Condomínio Jardim América',
+    subtitle: 'Empreendimento Residencial em Mafra / SC',
     category: 'edificios',
-    area: '18.500 m²',
-    location: 'Jardins, São Paulo',
-    year: '2024',
-    description: 'Empreendimento comercial corporativo construído pela Vande Construções com tecnologia BIM 7D, estrutura mista de aço e concreto e sistemas inteligentes de eficiência energética.',
-    imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85',
+    area: '2.800 m²',
+    location: 'Jardim América, Mafra / SC',
+    year: '2023',
+    description: 'Obra de condomínio residencial no bairro Jardim América em Mafra/SC. Projeto de infraestrutura civil, contencioso de encostas, áreas de circulação comum e edificações com padrão Vande de excelência.',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80'
+      'https://lh3.googleusercontent.com/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf'
     ],
     specs: {
-      structure: 'Núcleo rígido em concreto HPC e fachada em vidro duplo insulado',
-      timeline: '22 meses',
-      highlight: 'Redução de 38% no consumo hídrico e energético'
+      structure: 'Estrutura mista de concreto armado e drenagem de águas pluviais',
+      timeline: '14 meses de obra',
+      highlight: 'Pavimentação de acessos internos e contenção de encostas tratada'
     },
     featured: true
   },
   {
-    id: 'reforma-corporativa-vande',
-    title: 'Sede Vande Executive Hub',
-    subtitle: 'Retrofit e Design de Interiores Corporativo de Alto Padrão',
-    category: 'interiores',
-    area: '850 m²',
-    location: 'Itaim Bibi, SP',
-    year: '2025',
-    description: 'Projeto turnkey e execução impecável de interiores corporativos pela Vande Construções, priorizando isolamento acústico superior e marcenaria técnica de luxo.',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80'
-    ],
-    specs: {
-      structure: 'Vigas metálicas aparentes e divisórias acústicas de alto índice',
-      timeline: '5 meses',
-      highlight: 'Iluminação técnica automatizada e climatização setorizada'
-    },
-    featured: true
-  },
-  {
-    id: 'villa-vande-costa',
-    title: 'Villa Vande Horizon',
-    subtitle: 'Engenharia Marítima e Arquitetura de Veraneio Premium',
-    category: 'residencial',
-    area: '1.600 m²',
-    location: 'Litoral Norte, SP',
-    year: '2025',
-    description: 'Residência praiana cravada em terreno inclinado, com fundações especiais executadas pela Vande Construções contra intempéries e corrosão marinha.',
-    imageUrl: 'https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80'
-    ],
-    specs: {
-      structure: 'Tirantes de alta resistência e concreto marinho de baixa porosidade',
-      timeline: '18 meses',
-      highlight: 'Piscina de borda infinita com vista panorâmica para o mar'
-    },
-    featured: false
-  },
-  {
-    id: 'centro-logistico-vande',
-    title: 'Complexo Logístico Vande Prime',
-    subtitle: 'Infraestrutura Industrial e Obras de Grande Porte',
+    id: 'predio-irmaos-rodrigues',
+    title: 'Prédio Comercial Irmãos Rodrigues',
+    subtitle: 'Edificação Comercial Multi-pavimentos em Mafra / SC',
     category: 'corporativo',
-    area: '32.000 m²',
-    location: 'Guarulhos, SP',
-    year: '2024',
-    description: 'Centro logístico e industrial com piso de altíssima planaridade, pátio de manobras e estrutura pré-moldada de alto desempenho construída pela Vande.',
-    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85',
+    area: '1.450 m²',
+    location: 'Centro, Mafra / SC',
+    year: '2023',
+    description: 'Construção do Prédio Irmãos Rodrigues em Mafra/SC. Edifício comercial planejado para salas e lojas, com foco em acessibilidade, resistência estrutural e instalações preventivas contra incêndio.',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80'
+      'https://lh3.googleusercontent.com/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI'
     ],
     specs: {
-      structure: 'Piso industrial protendido capacidade 8 t/m²',
-      timeline: '10 meses',
-      highlight: 'Sistemas automatizados de proteção contra incêndio Sprinklers NFPA'
+      structure: 'Estrutura pré-moldada e lajes protendidas para amplos vãos livres',
+      timeline: '12 meses',
+      highlight: 'Fachada corporativa moderna e acessibilidade universal'
+    },
+    featured: true
+  },
+  {
+    id: 'academia-de-ginastica-mafra',
+    title: 'Academia de Ginástica Mafra',
+    subtitle: 'Espaço Esportivo & Comercial Especializado em Mafra / SC',
+    category: 'interiores',
+    area: '680 m²',
+    location: 'Mafra / SC',
+    year: '2022',
+    description: 'Execução e adequação de espaço corporativo esportivo para academia de ginástica em Mafra/SC. Piso de alto impacto, isolamento acústico, ventilação cruzada e instalações sanitárias reforçadas.',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7',
+    secondaryImages: [
+      'https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1'
+    ],
+    specs: {
+      structure: 'Piso industrial reforçado com revestimento acústico especial',
+      timeline: '4 meses de intervenção ágil',
+      highlight: 'Climatização centralizada e instalações hidráulicas de alta demanda'
     },
     featured: false
   }
@@ -109,58 +132,58 @@ export const PROJECTS: Project[] = [
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'execucao-de-obras',
-    title: 'Execução de Obras de Alto Padrão',
-    shortDesc: 'Construção completa do zero ao acabamento com máxima fidelidade ao projeto.',
-    fullDesc: 'A Vande Construções assume a responsabilidade total da sua obra. Com engenheiros dedicados no canteiro, rigor técnico, cronograma transparente e fornecedores selecionados.',
+    id: 'edificacoes-geral',
+    title: 'Edificações Residenciais, Comerciais e Industriais',
+    shortDesc: 'Construção completa do zero ao acabamento para obras públicas e privadas.',
+    fullDesc: 'A Vande Construções atua na execução completa de edificações com gestão rigorosa de prazos e custos, atendendo pessoas físicas, empresas e órgãos públicos com máxima eficiência.',
     iconName: 'ShieldCheck',
     deliverables: [
+      'Construção Residencial, Comercial e Industrial',
       'Gerenciamento Geral Turnkey (Chave na Mão)',
-      'Controle Físico-Financeiro semanal e relatórios por app',
-      'Equipe própria qualificada e supervisão contínua',
-      'Garantia estrutural e pós-obra de excelência'
+      'Equipe própria qualificada e supervisão direta de Vanderlei Kurz',
+      'Atendimento aos padrões de Qualidade Total'
     ],
     span: 'md:col-span-2'
   },
   {
-    id: 'engenharia-estrutural',
-    title: 'Engenharia Estrutural & BIM',
-    shortDesc: 'Soluções estruturais arrojadas, seguras e otimizadas para cada projeto.',
-    fullDesc: 'Projetos de engenharia civil, fundações e estruturas em concreto, aço e alvenaria estrutural modelados em BIM 3D/7D para eliminar interferências e sobressaltos no canteiro.',
+    id: 'mantençao-redes-energia',
+    title: 'Manutenção de Redes Elétricas & Hidráulicas',
+    shortDesc: 'Serviços especializados em redes elétricas, instalações sanitárias e de gás.',
+    fullDesc: 'Instalação e manutenção preventiva/corretiva de redes de distribuição de energia elétrica, sistemas hidráulicos, redes sanitárias e tubulações de gás com ART e normas de segurança.',
     iconName: 'Layers',
     deliverables: [
-      'Cálculo e Dimensionamento Estrutural de Precisão',
-      'Compatibilização BIM completa em 3D/7D',
-      'Análise de solo e fundações especiais',
-      'Laudos técnicos e ART de execução'
+      'Manutenção de redes de distribuição de energia elétrica',
+      'Instalações hidráulicas, sanitárias e prediais de gás',
+      'Laudos técnicos e auditorias de infraestrutura',
+      'Execução segundo normas da NBR/ABNT'
     ],
     span: 'md:col-span-1'
   },
   {
-    id: 'reformas-e-retrofit',
-    title: 'Reformas & Retrofit Corporativo',
-    shortDesc: 'Modernização de edifícios e interiores sem interromper a produtividade.',
-    fullDesc: 'Transformação profunda de espaços residenciais de luxo e plantas corporativas. Planejamento estratégico de obras rápidas, limpas e com alto valor agregado.',
+    id: 'contencao-encostas',
+    title: 'Contenção de Encostas & Obras Especiais',
+    shortDesc: 'Engenharia de solos, contenção e infraestrutura para terrenos desafiadores.',
+    fullDesc: 'Soluções seguras para contenção de encostas, muros de arrimo, drenagem de águas pluviais e estabilização de taludes em Rio Negro, PR, Mafra, SC e região.',
     iconName: 'PenTool',
     deliverables: [
-      'Reformas de Alto Padrão e Retrofit predial',
-      'Instalações elétricas e hidráulicas de ponta',
-      'Isolamento acústico e revestimentos nobres',
-      'Cumprimento rigoroso de normas e prazos corporativos'
+      'Projetos e execução de contenção de encostas',
+      'Muros de arrimo e fundações profundas',
+      'Terraplenagem e drenagem de solo',
+      'Segurança geotécnica comprovada'
     ],
     span: 'md:col-span-1'
   },
   {
-    id: 'gestao-e-consultoria',
-    title: 'Gestão Inteligente & Sustentabilidade',
-    shortDesc: 'Otimização de custos, sustentabilidade e eficiência energética para sua edificação.',
-    fullDesc: 'A Vande Construções integra tecnologias limpas, reaproveitamento hídrico, energia solar e automação para edificações duráveis com menor custo de manutenção.',
+    id: 'comercio-materiais-gerenciamento',
+    title: 'Gerenciamento, Auditoria & Comércio Varejista',
+    shortDesc: 'Auditoria de obras, gerenciamento técnico e fornecimento de materiais de construção.',
+    fullDesc: 'A Vande Construções oferece consultoria, auditoria de qualidade, gerenciamento de obras e conta também com comércio varejista de materiais de construção em geral para dar suporte completo aos projetos.',
     iconName: 'Cpu',
     deliverables: [
-      'Orçamento analítico detalhado sem surpresas',
-      'Projetos de Eficiência Energética e Energia Solar',
-      'Consultoria para aprovações e licenças regulatórias',
-      'Auditoria de qualidade e suprimentos'
+      'Gerenciamento e Auditoria de Obras',
+      'Consultoria para aprovação de projetos',
+      'Comércio varejista de materiais de construção em geral',
+      'Orçamentos analíticos sem aditivos imprevistos'
     ],
     span: 'md:col-span-2'
   }
@@ -173,30 +196,134 @@ export const TESTIMONIALS: Testimonial[] = [
     author: 'Avaliação no Google',
     role: 'Cliente Verificado ⭐⭐⭐⭐⭐',
     location: 'Rio Negro, PR',
-    projectRef: 'Obra Residencial'
+    projectRef: 'Obra Casa de Alvenaria - Bairro Seminário'
   },
   {
     id: '2',
-    quote: 'Excelente construtora em Rio Negro e região. Equipe técnica altamente qualificada, rigoroso cumprimento de prazos e fino acabamento.',
+    quote: 'Excelente construtora em Rio Negro e Mafra. Equipe técnica altamente qualificada, cumprimento impecável dos prazos e finos acabamentos.',
     author: 'Avaliação no Google',
     role: 'Cliente Verificado ⭐⭐⭐⭐⭐',
-    location: 'Rio Negro, PR',
-    projectRef: 'Construção Residencial'
+    location: 'Mafra, SC / Rio Negro, PR',
+    projectRef: 'Sobrado Residencial Mafra'
   },
   {
     id: '3',
-    quote: 'Profissionais extremamente dedicados e honestos. O orçamento entregue foi cumprido à risca sem nenhuma cobrança de aditivos surpresa. Recomendo a Vande Construções de olhos fechados!',
+    quote: 'Profissionais extremamente dedicados e honestos sob a liderança do Vanderlei Kurz. O orçamento entregue foi cumprido à risca. Recomendo a Vande Construções de olhos fechados!',
     author: 'Avaliação no Google',
     role: 'Cliente Verificado ⭐⭐⭐⭐⭐',
-    location: 'Mafra, SC / Rio Negro',
-    projectRef: 'Projeto Executivo & Obra'
+    location: 'Rio Negro, PR',
+    projectRef: 'Execução de Obra Comercial'
   }
 ];
 
 export const STUDIO_STATS = [
-  { label: 'Metros Quadrados Construídos', value: '350.000+', suffix: 'm²' },
-  { label: 'Compromisso com Prazos', value: '100%', suffix: 'Garantido' },
-  { label: 'Obras Entregues com Sucesso', value: '120+', suffix: 'Projetos' },
-  { label: 'Anos de Tradição e Excelência', value: '18+', suffix: 'Anos' }
+  { label: 'Anos no Mercado (Desde 2015)', value: '10+', suffix: 'Anos' },
+  { label: 'Compromisso com Prazos e Qualidade', value: '100%', suffix: 'Garantido' },
+  { label: 'Obras Realizadas (Públicas e Privadas)', value: '150+', suffix: 'Entregues' },
+  { label: 'Avaliação do Cliente no Google', value: '5.0', suffix: 'Estrelas' }
 ];
+
+export const WORKS_MEDIA: WorkMedia[] = [
+  {
+    id: 'media-1',
+    driveId: '10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
+    embedUrl: 'https://drive.google.com/file/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1/preview',
+    originalUrl: 'https://drive.google.com/file/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1/view?usp=sharing'
+  },
+  {
+    id: 'media-2',
+    driveId: '18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
+    embedUrl: 'https://drive.google.com/file/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0/preview',
+    originalUrl: 'https://drive.google.com/file/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0/view?usp=sharing'
+  },
+  {
+    id: 'media-3',
+    driveId: '1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS',
+    embedUrl: 'https://drive.google.com/file/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS/preview',
+    originalUrl: 'https://drive.google.com/file/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS/view?usp=sharing'
+  },
+  {
+    id: 'media-4',
+    driveId: '1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ',
+    embedUrl: 'https://drive.google.com/file/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ/preview',
+    originalUrl: 'https://drive.google.com/file/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ/view?usp=sharing'
+  },
+  {
+    id: 'media-5',
+    driveId: '1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR',
+    embedUrl: 'https://drive.google.com/file/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR/preview',
+    originalUrl: 'https://drive.google.com/file/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR/view?usp=sharing'
+  },
+  {
+    id: 'media-6',
+    driveId: '1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
+    embedUrl: 'https://drive.google.com/file/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq/preview',
+    originalUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/view?usp=sharing'
+  },
+  {
+    id: 'media-7',
+    driveId: '1sSpNtotDQXb22743JJaZ59vbWNmT9eXf',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf',
+    embedUrl: 'https://drive.google.com/file/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf/preview',
+    originalUrl: 'https://drive.google.com/file/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf/view?usp=sharing'
+  },
+  {
+    id: 'media-8',
+    driveId: '1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w',
+    embedUrl: 'https://drive.google.com/file/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w/preview',
+    originalUrl: 'https://drive.google.com/file/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w/view?usp=sharing'
+  },
+  {
+    id: 'media-9',
+    driveId: '1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI',
+    embedUrl: 'https://drive.google.com/file/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI/preview',
+    originalUrl: 'https://drive.google.com/file/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI/view?usp=sharing'
+  },
+  {
+    id: 'media-10',
+    driveId: '1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7',
+    title: 'Obra Vande Construções',
+    category: 'Geral',
+    location: 'Rio Negro / PR • Mafra / SC',
+    thumbnailUrl: 'https://lh3.googleusercontent.com/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7',
+    embedUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/preview',
+    originalUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/view?usp=sharing'
+  }
+];
+
 

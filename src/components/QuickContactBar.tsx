@@ -29,7 +29,7 @@ export const QuickContactBar: React.FC = () => {
 
           {/* Location / Address */}
           <a
-            href="https://maps.google.com/?q=R.+Cristiano+Buch,+545+-+Passa+Tres,+Rio+Negro+-+PR,+83880-000"
+            href="https://maps.google.com/?q=Rua+Cristiano+Buch,+545+-+Bairro+Bom+Jesus,+Rio+Negro+-+PR,+83880-000"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3.5 p-3 bg-[#0A1128] border border-white/10 hover:border-[#FF6B00]/50 transition-all group"
@@ -39,10 +39,10 @@ export const QuickContactBar: React.FC = () => {
             </div>
             <div className="overflow-hidden">
               <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 block">
-                Rio Negro - PR
+                Rio Negro - PR • Bom Jesus
               </span>
               <span className="text-xs font-semibold text-slate-200 truncate block group-hover:text-white transition-colors">
-                R. Cristiano Buch, 545
+                Rua Cristiano Buch, 545
               </span>
             </div>
           </a>
