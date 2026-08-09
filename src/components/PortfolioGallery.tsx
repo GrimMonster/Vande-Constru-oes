@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { WORKS_MEDIA } from '../data/mockData';
 import { WorkMedia } from '../types';
-import { Maximize2, ArrowUpRight, X, ChevronLeft, ChevronRight, Play, ExternalLink, VolumeX, Volume2 } from 'lucide-react';
+import { Maximize2, ArrowUpRight, X, ChevronLeft, ChevronRight, Play, ExternalLink } from 'lucide-react';
 
 interface PortfolioGalleryProps {
   onOpenConsultationModal: (projectTitle?: string) => void;
@@ -10,7 +10,6 @@ interface PortfolioGalleryProps {
 export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsultationModal }) => {
   const [selectedMedia, setSelectedMedia] = useState<WorkMedia | null>(null);
   const [selectedMediaIndex, setSelectedMediaIndex] = useState<number>(0);
-  const [isAudioMuted, setIsAudioMuted] = useState<boolean>(true);
 
   const handleOpenMediaLightbox = (media: WorkMedia, index: number) => {
     setSelectedMedia(media);
@@ -127,26 +126,6 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenConsul
                 <div className="bg-black/80 backdrop-blur-md px-3 py-1 text-xs text-slate-200 font-mono border border-white/10">
                   {selectedMediaIndex + 1} de {WORKS_MEDIA.length}
                 </div>
-                <button
-                  onClick={() => setIsAudioMuted(!isAudioMuted)}
-                  className={`px-3 py-1 text-xs font-mono font-bold flex items-center gap-1.5 border backdrop-blur-md transition-colors ${
-                    isAudioMuted
-                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-                      : 'bg-[#FF6B00]/20 text-[#FF6B00] border-[#FF6B00]/40'
-                  }`}
-                >
-                  {isAudioMuted ? (
-                    <>
-                      <VolumeX className="w-3.5 h-3.5 text-amber-400" />
-                      <span>ÁUDIO SILENCIOSO</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="w-3.5 h-3.5 text-[#FF6B00]" />
-                      <span>ÁUDIO ATIVADO</span>
-                    </>
-                  )}
-                </button>
               </div>
             </div>
 
