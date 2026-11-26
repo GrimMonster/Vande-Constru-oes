@@ -1,6 +1,6 @@
 import React from 'react';
 import { TESTIMONIALS } from '../data/mockData';
-import { Quote, Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 export const SocialProofAndStats: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Calculator, ArrowUpRight, CheckCircle2, Loader2, Compass, Cpu } from 'lucide-react';
+import { Sparkles, Calculator, ArrowUpRight, Loader2, Compass, Cpu } from 'lucide-react';
 import { AiBriefResult } from '../types';
 
 interface InvestmentEstimatorProps {
@@ -9,7 +9,7 @@ interface InvestmentEstimatorProps {
 export const InvestmentEstimator: React.FC<InvestmentEstimatorProps> = ({ onOpenConsultationModal }) => {
   const [area, setArea] = useState<number>(850);
   const [projectType, setProjectType] = useState<string>('Residência Unifamiliar de Luxo');
-  const [finishGrade, setFinishGrade] = useState<string>('Autoral Brutalista');
+  const [finishGrade, setFinishGrade] = useState<string>('Padrão Vande Superior');
   const [location, setLocation] = useState<string>('São Paulo / Alphaville');
   const [vision, setVision] = useState<string>('Mansão minimalista com balanço de concreto de 12 metros, caixilharia de piso a teto e integração total com a mata nativa.');
   

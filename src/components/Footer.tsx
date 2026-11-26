@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Instagram, Linkedin, Globe, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -38,7 +38,8 @@ export const Footer: React.FC = () => {
               Navegação
             </span>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><a href="#hero" className="hover:text-[#FF6B00] transition-colors">Sobre a Vande</a></li>
+              <li><a href="#hero" className="hover:text-[#FF6B00] transition-colors">Início</a></li>
+              <li><a href="#sobre" className="hover:text-[#FF6B00] transition-colors">Sobre a Vande</a></li>
               <li><a href="#portfolio" className="hover:text-[#FF6B00] transition-colors">Obras Realizadas</a></li>
               <li><a href="#contato" className="hover:text-[#FF6B00] transition-colors">Contato &amp; Endereço</a></li>
             </ul>
@@ -94,8 +95,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Vande Construções. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-6">
-            <span className="hover:text-slate-200 cursor-pointer">Termos de Uso</span>
-            <span className="hover:text-slate-200 cursor-pointer">Política de Privacidade</span>
+            <span>Rio Negro - PR</span>
             <span className="text-[#FF6B00] font-bold">Vande Construções</span>
           </div>
         </div>

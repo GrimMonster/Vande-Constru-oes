@@ -38,8 +38,8 @@ export const PROJECTS: Project[] = [
     description: 'Execução completa de sobrado residencial em Mafra/SC pela Vande Construções. Estrutura em alvenaria estrutural reforçada, com finos acabamentos, integração de ambientes e projeto luminotécnico funcional.',
     imageUrl: 'https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
     secondaryImages: [
-      'https://lh3.googleusercontent.com/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
-      'https://lh3.googleusercontent.com/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS'
+      'https://lh3.googleusercontent.com/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS',
+      'https://lh3.googleusercontent.com/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ'
     ],
     specs: {
       structure: 'Alvenaria de precisão, lajes treliçadas e cobertura isolada',
@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     description: 'Obra de condomínio residencial no bairro Jardim América em Mafra/SC. Projeto de infraestrutura civil, contencioso de encostas, áreas de circulação comum e edificações com padrão Vande de excelência.',
     imageUrl: 'https://lh3.googleusercontent.com/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
     secondaryImages: [
-      'https://lh3.googleusercontent.com/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf'
+      'https://lh3.googleusercontent.com/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI'
     ],
     specs: {
       structure: 'Estrutura mista de concreto armado e drenagem de águas pluviais',
@@ -227,8 +227,9 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-1',
     driveId: '10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'image',
+    title: 'Obra Residencial de Alto Padrão',
+    category: 'Residencial',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1',
     embedUrl: 'https://drive.google.com/file/d/10PonwKPwY2XgNej8fkYn_6ipehcEAKB1/preview',
@@ -237,8 +238,9 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-2',
     driveId: '18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'video',
+    title: 'Execução de Obra — Registro em Vídeo 01',
+    category: 'Vídeo de Obra',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0',
     embedUrl: 'https://drive.google.com/file/d/18GFApJ-k80VtNnz6xVzVtH0gO6e3XKd0/preview',
@@ -247,8 +249,9 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-3',
     driveId: '1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'image',
+    title: 'Engenharia e Execução Estrutural',
+    category: 'Estrutura',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS',
     embedUrl: 'https://drive.google.com/file/d/1Bqv8zGJ_20lvgC6rbJ3CqMN5hip45AxS/preview',
@@ -257,9 +260,10 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-4',
     driveId: '1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
-    location: 'Rio Negro / PR • Mafra / SC',
+    mediaType: 'image',
+    title: 'Casa em Alvenaria — Bairro Seminário',
+    category: 'Residencial',
+    location: 'Rio Negro / PR',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ',
     embedUrl: 'https://drive.google.com/file/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ/preview',
     originalUrl: 'https://drive.google.com/file/d/1CZrVvUCIH_gx-lKeGK3C4QMZsN1B2oFQ/view?usp=sharing'
@@ -267,8 +271,9 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-5',
     driveId: '1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'image',
+    title: 'Acabamentos e Interiores',
+    category: 'Acabamentos',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR',
     embedUrl: 'https://drive.google.com/file/d/1KSWy0aAzmCri_tjY01DiGTk2EKW5aeKR/preview',
@@ -277,18 +282,20 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-6',
     driveId: '1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
-    location: 'Rio Negro / PR • Mafra / SC',
+    mediaType: 'image',
+    title: 'Condomínio Jardim América',
+    category: 'Condomínio',
+    location: 'Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq',
     embedUrl: 'https://drive.google.com/file/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq/preview',
-    originalUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/view?usp=sharing'
+    originalUrl: 'https://drive.google.com/file/d/1nvnEanV_FPLgjTsJdWky4-vg-e-ZLPDq/view?usp=sharing'
   },
   {
     id: 'media-7',
     driveId: '1sSpNtotDQXb22743JJaZ59vbWNmT9eXf',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'video',
+    title: 'Acompanhamento de Canteiro — Registro em Vídeo 02',
+    category: 'Vídeo de Obra',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf',
     embedUrl: 'https://drive.google.com/file/d/1sSpNtotDQXb22743JJaZ59vbWNmT9eXf/preview',
@@ -297,9 +304,10 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-8',
     driveId: '1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
-    location: 'Rio Negro / PR • Mafra / SC',
+    mediaType: 'image',
+    title: 'Edifício Comercial Irmãos Rodrigues',
+    category: 'Comercial',
+    location: 'Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w',
     embedUrl: 'https://drive.google.com/file/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w/preview',
     originalUrl: 'https://drive.google.com/file/d/1tIQy8xAq1fdyLM-LdXHtuI-0cXn4PU7w/view?usp=sharing'
@@ -307,8 +315,9 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-9',
     driveId: '1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
+    mediaType: 'image',
+    title: 'Estrutura Comercial',
+    category: 'Comercial',
     location: 'Rio Negro / PR • Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI',
     embedUrl: 'https://drive.google.com/file/d/1tiz9Gbdr4kafxhkOj9Aps6EQc3ujV3PI/preview',
@@ -317,13 +326,18 @@ export const WORKS_MEDIA: WorkMedia[] = [
   {
     id: 'media-10',
     driveId: '1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7',
-    title: 'Obra Vande Construções',
-    category: 'Geral',
-    location: 'Rio Negro / PR • Mafra / SC',
+    mediaType: 'image',
+    title: 'Espaço Esportivo e Comercial',
+    category: 'Comercial',
+    location: 'Mafra / SC',
     thumbnailUrl: 'https://lh3.googleusercontent.com/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7',
     embedUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/preview',
     originalUrl: 'https://drive.google.com/file/d/1yHlXX9PQcf3UeQ_THxKpDEMcLi3b5Rf7/view?usp=sharing'
   }
 ];
+
+export const WORK_PHOTOS: WorkMedia[] = WORKS_MEDIA.filter((item) => item.mediaType === 'image');
+export const WORK_VIDEOS: WorkMedia[] = WORKS_MEDIA.filter((item) => item.mediaType === 'video');
+
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Compass, Layers, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 export const PhilosophyAndProcess: React.FC = () => {
   const steps = [

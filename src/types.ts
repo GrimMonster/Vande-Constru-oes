@@ -1,6 +1,7 @@
 export interface WorkMedia {
   id: string;
   driveId: string;
+  mediaType: 'image' | 'video';
   title: string;
   category: string;
   location: string;

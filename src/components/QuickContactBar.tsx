@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Clock, Star, ArrowRight, MessageSquare } from 'lucide-react';
+import { MapPin, Clock, Star, ArrowRight, MessageSquare } from 'lucide-react';
 
 export const QuickContactBar: React.FC = () => {
   return (
