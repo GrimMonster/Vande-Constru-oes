@@ -38,43 +38,26 @@ export const InvestmentEstimator: React.FC<InvestmentEstimatorProps> = ({ onOpen
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
   };
 
-  const handleGenerateAiBrief = async (e: React.FormEvent) => {
+  const handleGenerateAiBrief = (e: React.FormEvent) => {
     e.preventDefault();
     setLoadingAi(true);
-    setAiBrief(null);
 
-    try {
-      const response = await fetch('/api/ai-architect-brief', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          projectType,
-          areaM2: area,
-          location,
-          stylePreference: finishGrade,
-          visionDescription: vision
-        })
-      });
-
-      const data = await response.json();
-      if (data && data.brief) {
-        setAiBrief(data.brief);
-      }
-    } catch (err) {
-      console.error("AI Brief error:", err);
-      // Fallback response if offline/error
-      setAiBrief({
-        title: `Diretriz de Engenharia Vande: ${projectType}`,
-        estimatedInvestment: `${formatCurrency(minCost)} - ${formatCurrency(maxCost)}`,
-        structuralHighlight: "Estrutura autoportante em concreto armado com balanços e soluções em aço de alta resistência.",
-        sustainabilityFactor: "Planejamento térmico e acústico com reaproveitamento hídrico e eficiência energética.",
-        executionTimeline: "12 a 16 meses com acompanhamento técnico contínuo.",
-        recommendedMaterials: ["Concreto Aparente", "Caixilharia de Alumínio Anodizado", "Vidro Laminado Duplo", "Revestimentos Portobello"],
-        curatorMessage: "O conceito possui viabilidade executiva garantida. Agende uma reunião presencial ou online com o diretor de obras da Vande Construções."
-      });
-    } finally {
-      setLoadingAi(false);
-    }
+    const estimatedMonths = Math.max(6, Math.round(area / 65));
+    setAiBrief({
+      title: `Parecer Técnico Vande: ${projectType}`,
+      estimatedInvestment: `${formatCurrency(minCost)} - ${formatCurrency(maxCost)}`,
+      structuralHighlight: `Estrutura dimensionada para ${area} m² em ${location || 'Rio Negro / Mafra e região'} no padrão ${finishGrade}, com fundações e alvenaria/concreto em conformidade NBR.`,
+      sustainabilityFactor: 'Planejamento térmico e acústico com reaproveitamento hídrico e gestão sustentável de resíduos no canteiro.',
+      executionTimeline: `${estimatedMonths} a ${estimatedMonths + 4} meses (Execução Turnkey Vande)`,
+      recommendedMaterials: [
+        'Concreto de Alta Desempenho',
+        'Esquadrias de Alumínio de Alta Vedação',
+        'Porcelanatos de Grandes Formatos',
+        'Infraestrutura Fotovoltaica Preparada'
+      ],
+      curatorMessage: `Diretriz preliminar gerada para "${vision.slice(0, 90)}${vision.length > 90 ? '...' : ''}". A equipe da Vande Construções está pronta para elaborar o orçamento analítico completo.`
+    });
+    setLoadingAi(false);
   };
 
   return (
